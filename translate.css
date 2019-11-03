@@ -1,0 +1,168 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    list-style: none;
+}
+:root ,body{
+    /* background-color: black; */
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+
+}
+.content{
+    justify-content: space-between;
+    display: flex;
+    width: 80%;
+    height: 80%;
+    align-items: center;
+}
+.item1{
+    width: 16%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: gray;
+    transition: height 0.5s linear 0.5s,
+                width 0.5s linear ;
+    
+    
+}
+.item1:nth-of-type(2) .inner{
+    transition-delay: 0.2s 
+}
+.item1:nth-of-type(3) .inner{
+    transition-delay: 0.3s 
+}
+.item1:nth-of-type(4) .inner{
+    transition-delay: 0.4s 
+}
+.item1:nth-of-type(5) .inner{
+    transition-delay: 0.5s 
+}
+.item1:nth-of-type(6) .inner{
+    transition-delay: 0.6s 
+}
+.active{
+    width: 100%;
+
+}
+.wrapper-active .item1:not(.active){
+    height: 0%;
+    width: 0%;
+}
+.wrapper-active .item1{
+    transition: height 0.5s linear ,
+                width 0.5s linear 0.5s;
+}
+.item1 .inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s linear; 
+    border-radius: 20px;
+    overflow: hidden;
+}
+.item1 .bg{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+.init .item1 .inner{
+    transform: translate3d(0,100%,0)
+}
+.item1:nth-of-type(1) .bg{
+    background-image: url(1.jpg);
+}
+.item1:nth-of-type(2) .bg{
+    background-image: url(2.jpg);
+}
+.item1:nth-of-type(3) .bg{
+    background-image: url(3.jpg);
+}
+.item1:nth-of-type(4) .bg{
+    background-image: url(4.jpg);
+}
+.item1:nth-of-type(5) .bg{
+    background-image: url(5.jpg);
+}
+.item1:nth-of-type(6) .bg{
+    background-image: url(6.jpg);
+}
+
+.item1 .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: opacity .2s linear 1s;
+}
+.item1 .title h2 {
+    font-size: 14px;
+}
+.item1:hover .title h2{
+    font-size: 20px;
+    transition: font-size 0.2s linear;
+}
+.item1:hover .bg{
+    opacity: 1;
+}
+.wrapper-active .item1 .title{
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+.item1 .dis{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    height: 30px;
+    opacity: 0;
+}
+.item1 .header{
+    float: left;
+    margin-left: 30px;
+    line-height: 30px;
+}
+.item1 .close{
+    top: 50%;
+    margin-top: 1px;
+    position: relative;
+    float: right;
+    margin-right: 30px;
+    width: 30px;
+    height: 30px;
+}
+.item1 .close::before,
+.item1 .close::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: white;
+}
+.item1 .close::before {
+    transform: rotate(45deg);
+}
+.item1 .close::after{
+    transform: rotate(-45deg);
+}
+.active .dis{
+    opacity: 1;
+    transition: opacity 1s linear ;
+}
+.wrapper-active .item1 .bg{
+    opacity: 1;
+}
